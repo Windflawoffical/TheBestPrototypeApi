@@ -1,0 +1,8 @@
+tbpapi\thebestprototypeapi\Controllers\UserController.class
+tbpapi\thebestprototypeapi\Models\User.class
+tbpapi\thebestprototypeapi\Services\UpdateService.class
+tbpapi\thebestprototypeapi\Exceptions\RegistrationErrorException.class
+tbpapi\thebestprototypeapi\Repositories\UserRepository.class
+tbpapi\thebestprototypeapi\Services\AuthService.class
+tbpapi\thebestprototypeapi\Exceptions\NoUserFoundException.class
+tbpapi\thebestprototypeapi\ThebestprototypeapiApplication.class
