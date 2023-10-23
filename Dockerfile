@@ -1,7 +1,7 @@
 #
 # Build stage
 #
-FROM 3.9.5-eclipse-temurin-21-alpine AS build
+FROM 3.9.0-eclipse-temurin-21-alpine AS build
 COPY . .
 RUN mvn clean package -Pprod -DskipTests
 
