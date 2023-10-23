@@ -1,14 +1,14 @@
 #
 # Build stage
 #
-FROM maven:3.8.2-jdk-11 AS build
+FROM 3.9.5-eclipse-temurin-21-alpine AS build
 COPY . .
 RUN mvn clean package -Pprod -DskipTests
 
 #
 # Package stage
 #
-FROM eclipse-temurin:21-jdk-jammy
+FROM openjdk:21
 COPY --from=build /target/thebestprototypeapi-0.0.1-SNAPSHOT.jar thebestprototypeapi-0.0.1-SNAPSHOT.jar
 EXPOSE 8080
 ENTRYPOINT ["java","-jar","/thebestprototypeapi-0.0.1-SNAPSHOT.jar"]
