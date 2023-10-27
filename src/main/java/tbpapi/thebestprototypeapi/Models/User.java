@@ -23,5 +23,7 @@ public class User {
     private double latitude;
     @Column(name = "longtitude")
     private double longtitude;
+    @Column(name = "signalpower")
+    private int signalpower;
 
 }

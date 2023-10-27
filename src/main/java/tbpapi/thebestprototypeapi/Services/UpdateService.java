@@ -20,6 +20,15 @@ public class UpdateService {
             userfromdb.setLongtitude(user.getLongtitude());
             return userRepository.save(userfromdb);
         }
-        throw new NoUserFoundException("Пользователь с таким email + " + user.getEmail() + " либо не найден!\nЛибо вы указали latitude = 0/null или longtitude = 0/null!");
+        throw new NoUserFoundException("Пользователь с таким email + " + user.getEmail() + " либо не найден!\nЛибо вы указали latitude = 0/null или longtitude = 0/null...!");
+    }
+
+    public User updateSignal(User user) throws NoUserFoundException {
+        User userfromdb = userRepository.findByEmail(user.getEmail());
+        if(!(userfromdb == null) && user.getSignalpower() != 0) {
+            userfromdb.setSignalpower(user.getSignalpower());
+            return userRepository.save(userfromdb);
+        }
+        throw new NoUserFoundException("Пользователь с таким email + " + user.getEmail() + " либо не найден!\nЛибо вы указали Signal = 0/null...!");
     }
 }

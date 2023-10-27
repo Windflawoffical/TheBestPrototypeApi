@@ -46,6 +46,16 @@ public class UserController {
         }
     }
 
+    @PostMapping("update-signal")
+    public ResponseEntity UpdateSignal(@RequestBody User user){
+        try {
+            User userfromdb = updateService.updateSignal(user);
+            return ResponseEntity.ok().body(userfromdb);
+        } catch (NoUserFoundException error){
+            return ResponseEntity.badRequest().body(error.getMessage());
+        }
+    }
+
     @PostMapping("sign-up")
     public ResponseEntity<?> SignUp(@RequestBody User user) {
         try {
