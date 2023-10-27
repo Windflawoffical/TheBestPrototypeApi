@@ -35,7 +35,6 @@ public class UserController {
         return employees;
     }
 
-
     @PostMapping("update-location")
     public ResponseEntity UpdateLocation(@RequestBody User user){
         try {
