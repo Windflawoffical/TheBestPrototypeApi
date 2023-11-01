@@ -6,6 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import tbpapi.thebestprototypeapi.Exceptions.NoUserFoundException;
 import tbpapi.thebestprototypeapi.Exceptions.RegistrationErrorException;
+import tbpapi.thebestprototypeapi.Exceptions.ServerConnectionException;
 import tbpapi.thebestprototypeapi.Models.User;
 import tbpapi.thebestprototypeapi.Repositories.UserRepository;
 import tbpapi.thebestprototypeapi.Services.AuthService;
@@ -27,17 +28,18 @@ public class UserController {
     @Autowired
     UpdateService updateService;
 
-    @RequestMapping(value = "delete-all", method = RequestMethod.DELETE)
-    public void deleteAllUsers(){
+    @DeleteMapping("delete-all")
+    public String deleteAllUsers() {
         repo.deleteAll();
+        return "Successful deleted all users!";
     }
 
     @GetMapping("get-all")
     public List<User> getAllUsers(){
-        List<User> employees = new ArrayList<>();
+        List<User> users = new ArrayList<>();
         Streamable.of(repo.findAll())
-                .forEach(employees::add);
-        return employees;
+                .forEach(users::add);
+        return users;
     }
 
     @PostMapping("update-location")
