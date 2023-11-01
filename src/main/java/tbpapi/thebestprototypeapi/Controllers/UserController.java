@@ -27,7 +27,7 @@ public class UserController {
     @Autowired
     UpdateService updateService;
 
-    @DeleteMapping("delete-all")
+    @RequestMapping(value = "delete-all", method = RequestMethod.DELETE)
     public void deleteAllUsers(){
         repo.deleteAll();
     }
