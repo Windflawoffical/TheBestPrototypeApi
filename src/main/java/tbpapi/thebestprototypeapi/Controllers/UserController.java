@@ -27,6 +27,11 @@ public class UserController {
     @Autowired
     UpdateService updateService;
 
+    @DeleteMapping("delete-all")
+    public void deleteAllUsers(){
+        repo.deleteAll();
+    }
+
     @GetMapping("get-all")
     public List<User> getAllUsers(){
         List<User> employees = new ArrayList<>();
