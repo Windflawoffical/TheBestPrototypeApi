@@ -19,6 +19,6 @@ public class UpdateService {
             userfromdb.setSignalpower(user.getSignalpower());
             return userRepository.save(userfromdb);
         }
-        throw new NoUserFoundException("Пользователь с таким email + " + user.getEmail() + " либо не найден!\nЛибо вы указали latitude = 0/null или longtitude = 0/null...!");
+        throw new NoUserFoundException("Пользователь с таким email + " + user.getEmail() + " либо не найден!\nЛибо вы указали latitude = 0/null или longtitude = 0/null или signalpower = 0/null!");
     }
 }
