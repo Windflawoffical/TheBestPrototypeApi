@@ -1,4 +1,5 @@
 tbpapi\thebestprototypeapi\Controllers\UserController.class
+tbpapi\thebestprototypeapi\Exceptions\ServerConnectionException.class
 tbpapi\thebestprototypeapi\Models\User.class
 tbpapi\thebestprototypeapi\Services\UpdateService.class
 tbpapi\thebestprototypeapi\Exceptions\RegistrationErrorException.class

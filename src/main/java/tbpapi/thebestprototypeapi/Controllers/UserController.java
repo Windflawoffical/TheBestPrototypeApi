@@ -42,20 +42,10 @@ public class UserController {
         return users;
     }
 
-    @PostMapping("update-location")
-    public ResponseEntity UpdateLocation(@RequestBody User user){
+    @PostMapping("update-data")
+    public ResponseEntity UpdateData(@RequestBody User user){
         try {
-            User userfromdb = updateService.updateLocation(user);
-            return ResponseEntity.ok().body(userfromdb);
-        } catch (NoUserFoundException error){
-            return ResponseEntity.badRequest().body(error.getMessage());
-        }
-    }
-
-    @PostMapping("update-signal")
-    public ResponseEntity UpdateSignal(@RequestBody User user){
-        try {
-            User userfromdb = updateService.updateSignal(user);
+            User userfromdb = updateService.updateData(user);
             return ResponseEntity.ok().body(userfromdb);
         } catch (NoUserFoundException error){
             return ResponseEntity.badRequest().body(error.getMessage());
