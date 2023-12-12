@@ -5,7 +5,7 @@ import lombok.Data;
 
 @Entity
 @Table(
-        name = "users",
+        name = "user",
         schema = "public"
 )
 @Data
