@@ -16,7 +16,7 @@ public class UpdateService {
         if(!(userfromdb == null) && user.getLatitude() != 0
                 && user.getLongtitude() != 0
                 && user.getSignalpower() != 0
-                && user.getNetworkOperatorName().isEmpty()
+                && !user.getNetworkOperatorName().isEmpty()
                 && user.getNetworkOperatorCode() != 0)
         {
             userfromdb.setLatitude(user.getLatitude());
