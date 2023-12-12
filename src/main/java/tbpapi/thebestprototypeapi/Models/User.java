@@ -5,7 +5,7 @@ import lombok.Data;
 
 @Entity
 @Table(
-        name = "user",
+        name = "users",
         schema = "public"
 )
 @Data
@@ -25,6 +25,10 @@ public class User {
     private double longtitude;
     @Column(name = "signalpower")
     private int signalpower;
+    @Column(name = "networkoperatorname")
+    private String NetworkOperatorName;
+    @Column(name = "networkoperatorcode")
+    private int NetworkOperatorCode;
 
     public int getId() {
         return id;
@@ -82,6 +86,22 @@ public class User {
         this.signalpower = signalpower;
     }
 
+    public String getNetworkOperatorName() {
+        return NetworkOperatorName;
+    }
+
+    public void setNetworkOperatorName(String networkOperatorName) {
+        NetworkOperatorName = networkOperatorName;
+    }
+
+    public int getNetworkOperatorCode() {
+        return NetworkOperatorCode;
+    }
+
+    public void setNetworkOperatorCode(int networkOperatorCode) {
+        NetworkOperatorCode = networkOperatorCode;
+    }
+
     @Override
     public String toString() {
         return "User{" +
@@ -92,6 +112,8 @@ public class User {
                 ", latitude=" + latitude +
                 ", longtitude=" + longtitude +
                 ", signalpower=" + signalpower +
+                ", NetworkOperatorName='" + NetworkOperatorName + '\'' +
+                ", NetworkOperatorCode=" + NetworkOperatorCode +
                 '}';
     }
 }

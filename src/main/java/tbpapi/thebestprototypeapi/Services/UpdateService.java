@@ -13,12 +13,18 @@ public class UpdateService {
     UserRepository userRepository;
     public User updateData(User user) throws NoUserFoundException {
         User userfromdb = userRepository.findByEmail(user.getEmail()  );
-        if(!(userfromdb == null) && user.getLatitude() != 0 && user.getLongtitude() != 0 && user.getSignalpower() != 0) {
+        if(!(userfromdb == null) && user.getLatitude() != 0
+                && user.getLongtitude() != 0
+                && user.getSignalpower() != 0
+                && user.getNetworkOperatorName() != null
+                && user.getNetworkOperatorCode() != 0) {
             userfromdb.setLatitude(user.getLatitude());
             userfromdb.setLongtitude(user.getLongtitude());
             userfromdb.setSignalpower(user.getSignalpower());
+            userfromdb.setNetworkOperatorName(user.getNetworkOperatorName());
+            userfromdb.setNetworkOperatorCode(user.getNetworkOperatorCode());
             return userRepository.save(userfromdb);
         }
-        throw new NoUserFoundException("Пользователь с таким email + " + user.getEmail() + " либо не найден!\nЛибо вы указали latitude = 0/null или longtitude = 0/null или signalpower = 0/null!");
+        throw new NoUserFoundException("Пользователь с таким email + " + user.getEmail() + " либо не найден!\nЛибо вы неправильно указали изменённые данные!");
     }
 }
