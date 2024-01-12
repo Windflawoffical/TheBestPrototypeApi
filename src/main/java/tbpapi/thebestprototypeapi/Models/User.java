@@ -1,34 +1,34 @@
 package tbpapi.thebestprototypeapi.Models;
 
 import jakarta.persistence.*;
-import lombok.Data;
 
 @Entity
 @Table(
         name = "user",
         schema = "public"
 )
-@Data
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    public int id;
     @Column(name = "fullname", nullable = false)
-    private String fullname;
+    public String fullname;
     @Column(name = "email", unique = true, nullable = false)
-    private String email;
+    public String email;
     @Column(name = "password", nullable = false)
-    private String password;
+    public String password;
     @Column(name = "latitude")
-    private double latitude;
+    public double latitude;
     @Column(name = "longtitude")
-    private double longtitude;
+    public double longtitude;
     @Column(name = "signalpower")
-    private int signalpower;
+    public int signalpower;
+    //networkOperatorName
     @Column(name = "networkoperatorname")
-    private String NetworkOperatorName;
+    public String NetworkOperatorName;
+    //networkOperatorCode
     @Column(name = "networkoperatorcode")
-    private int NetworkOperatorCode;
+    public int NetworkOperatorCode;
 
     public int getId() {
         return id;
